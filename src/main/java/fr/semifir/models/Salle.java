@@ -1,7 +1,5 @@
 package fr.semifir.models;
 
-import java.util.List;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -13,7 +11,7 @@ public class Salle {
 	private String id;
 	
 	@DBRef
-	private List<Seance> seances;
+	private Cinema cinema;
 	
 	private int numero;
 	private int nbplace;
@@ -22,10 +20,10 @@ public class Salle {
 		
 	}
 
-	public Salle(String id, List<Seance> seances, int numero, int nbplace) {
+	public Salle(String id, Cinema cinema, int numero, int nbplace) {
 		super();
 		this.id = id;
-		this.seances = seances;
+		this.cinema = cinema;
 		this.numero = numero;
 		this.nbplace = nbplace;
 	}
@@ -38,12 +36,12 @@ public class Salle {
 		this.id = id;
 	}
 
-	public List<Seance> getSeances() {
-		return seances;
+	public Cinema getCinema() {
+		return cinema;
 	}
 
-	public void setSeance(List<Seance> seances) {
-		this.seances = seances;
+	public void setCinema(Cinema cinema) {
+		this.cinema = cinema;
 	}
 
 	public int getNumero() {
