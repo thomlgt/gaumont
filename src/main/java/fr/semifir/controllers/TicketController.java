@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.semifir.models.Ticket;
@@ -29,7 +28,7 @@ public class TicketController {
 	}
 	
 	@GetMapping("/{id}")
-	public Optional<Ticket> findById(@RequestParam String id) {
+	public Optional<Ticket> findById(@PathVariable String id) {
 		return this.service.trouverParId(id);
 	}
 	
