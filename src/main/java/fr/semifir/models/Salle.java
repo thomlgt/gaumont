@@ -13,9 +13,6 @@ public class Salle {
 	private String id;
 	
 	@DBRef
-	private Cinema cinema;
-	
-	@DBRef
 	private List<Seance> seances;
 	
 	private int numero;
@@ -25,10 +22,9 @@ public class Salle {
 		
 	}
 
-	public Salle(String id, Cinema cinema, List<Seance> seances, int numero, int nbplace) {
+	public Salle(String id, List<Seance> seances, int numero, int nbplace) {
 		super();
 		this.id = id;
-		this.cinema = cinema;
 		this.seances = seances;
 		this.numero = numero;
 		this.nbplace = nbplace;
@@ -40,14 +36,6 @@ public class Salle {
 
 	public void setId(String id) {
 		this.id = id;
-	}
-
-	public Cinema getCinema() {
-		return cinema;
-	}
-
-	public void setCinema(Cinema cinema) {
-		this.cinema = cinema;
 	}
 
 	public List<Seance> getSeances() {
