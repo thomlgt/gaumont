@@ -11,27 +11,24 @@ public class Ticket {
 	private String id;
 	
 	@DBRef
+	private Cinema cinema;
+	
+	@DBRef
 	private Salle salle;
 	
 	@DBRef
 	private Seance seance;
 	
-	@DBRef
-	private Film film;
-	
-	private int numero;
-	
 	public Ticket() {
 		
 	}
 
-	public Ticket(String id, Salle salle, Seance seance, Film film, int numero) {
+	public Ticket(String id, Cinema cinema, Salle salle, Seance seance) {
 		super();
 		this.id = id;
+		this.cinema = cinema;
 		this.salle = salle;
 		this.seance = seance;
-		this.film = film;
-		this.numero = numero;
 	}
 
 	public String getId() {
@@ -40,6 +37,14 @@ public class Ticket {
 
 	public void setId(String id) {
 		this.id = id;
+	}
+
+	public Cinema getCinema() {
+		return cinema;
+	}
+
+	public void setCinema(Cinema cinema) {
+		this.cinema = cinema;
 	}
 
 	public Salle getSalle() {
@@ -57,22 +62,4 @@ public class Ticket {
 	public void setSeance(Seance seance) {
 		this.seance = seance;
 	}
-
-	public Film getFilm() {
-		return film;
-	}
-
-	public void setFilm(Film film) {
-		this.film = film;
-	}
-
-	public int getNumero() {
-		return numero;
-	}
-
-	public void setNumero(int numero) {
-		this.numero = numero;
-	}
-	
-	
 }
