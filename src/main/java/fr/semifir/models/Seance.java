@@ -1,6 +1,6 @@
 package fr.semifir.models;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
@@ -18,13 +18,13 @@ public class Seance {
 	@DBRef
 	private Salle salle;
 	
-	private Date date;
+	private LocalDateTime date;
 	
 	public Seance() {
 		
 	}
 
-	public Seance(String id, Film film, Salle salle, Date date) {
+	public Seance(String id, Film film, Salle salle, LocalDateTime date) {
 		super();
 		this.id = id;
 		this.salle = salle;
@@ -48,7 +48,7 @@ public class Seance {
 		this.film = film;
 	}
 
-	public Date getDate() {
+	public LocalDateTime getDate() {
 		return date;
 	}
 
@@ -60,7 +60,7 @@ public class Seance {
 		this.salle = salle;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(LocalDateTime date) {
 		this.date = date;
 	}
 	

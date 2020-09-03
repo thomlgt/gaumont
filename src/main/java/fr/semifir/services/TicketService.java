@@ -37,7 +37,8 @@ public class TicketService {
 			result = "Commande : " + ticket.getId() +
 					"\nCinema : " + seance.getSalle().getCinema().getNom() +
 					"\nFilm  : " + seance.getFilm().getNom() +
-					"\nHeure : " + seance.getDate() +
+					"\nDate de début: " + seance.getDate() +
+					"\nDate de fin: " + seance.getDate().plusMinutes(seance.getFilm().getDuree()) +
 					"\nSalle : " + seance.getSalle().getNumero();
 		}
 		return result.toString();

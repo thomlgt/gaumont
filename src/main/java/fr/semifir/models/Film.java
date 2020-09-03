@@ -11,14 +11,17 @@ public class Film {
 	
 	private String nom;
 	
+	private int duree;
+	
 	public Film() {
 		
 	}
 
-	public Film(String id, String nom) {
+	public Film(String id, String nom, int duree) {
 		super();
 		this.id = id;
 		this.nom = nom;
+		this.duree = duree;
 	}
 
 	public String getId() {
@@ -35,6 +38,14 @@ public class Film {
 
 	public void setNom(String nom) {
 		this.nom = nom;
+	}
+
+	public int getDuree() {
+		return duree;
+	}
+
+	public void setDuree(int duree) {
+		this.duree = duree;
 	}
 	
 	
