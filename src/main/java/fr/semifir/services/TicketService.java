@@ -34,11 +34,11 @@ public class TicketService {
 		if(optionalTicket.isPresent()) {
 			Ticket ticket = optionalTicket.get();
 			Seance seance = ticket.getSeance();
-			result = "Numéro : " + ticket.getId() +
-					"\n" +
-					"\n Film  : " + seance.getFilm().getNom() +
-					"\n Heure : " + seance.getDate() +
-					"\n Salle : ";
+			result = "Commande : " + ticket.getId() +
+					"\nCinema : " + seance.getSalle().getCinema().getNom() +
+					"\nFilm  : " + seance.getFilm().getNom() +
+					"\nHeure : " + seance.getDate() +
+					"\nSalle : " + seance.getSalle().getNumero();
 		}
 		return result.toString();
 	}
